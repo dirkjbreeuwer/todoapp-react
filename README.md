@@ -9,6 +9,7 @@ A glimpse of the user-friendly interface of the Simple To-Do App where users can
 
 ![Main Screen UI](./assets/MainScreenUI.jpg)
 
+*Access Figma file for the UI [here](https://www.figma.com/file/DG89AKe3aFGtxJ1EZDoL8E/Simple-todo-app?node-id=0%3A1&t=yHNTPBedjpfBanr3-0)*
 ## Getting Started
 1. Clone the repository
 ```

@@ -1,0 +1,64 @@
+.vectorIcon {
+  position: relative;
+  width: 18px;
+  height: 12px;
+  flex-shrink: 0;
+}
+.menufilled {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: var(--padding-2xs) var(--padding-3xs);
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.typography {
+  position: relative;
+  line-height: 133.4%;
+  font-weight: 500;
+}
+.leftsection {
+  align-self: stretch;
+  background-color: var(--green-21);
+  width: 200px;
+  flex-shrink: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-xl) var(--padding-3xl);
+  box-sizing: border-box;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-lg);
+}
+.accountcirclefilledIcon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.navbar,
+.rightsection {
+  align-self: stretch;
+  background-color: var(--green-21);
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+}
+.rightsection {
+  flex: 1;
+  padding: var(--padding-xl) var(--padding-3xl);
+  align-items: center;
+  justify-content: flex-end;
+}
+.navbar {
+  border-radius: var(--br-sm);
+  padding: var(--padding-xs) 0;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: center;
+  font-size: var(--font-size-lg);
+  color: var(--light-background-default);
+  font-family: var(--font-roboto);
+}

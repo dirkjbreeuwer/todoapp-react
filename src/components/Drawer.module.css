@@ -1,0 +1,90 @@
+.mailfilledIcon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.div,
+.inbox {
+  flex: 1;
+  position: relative;
+  align-items: center;
+}
+.inbox {
+  align-self: stretch;
+  font-weight: 500;
+  display: flex;
+}
+.div {
+  font-weight: 300;
+  text-align: right;
+}
+.div,
+.div1,
+.personal,
+.sectionitem {
+  align-self: stretch;
+  display: flex;
+}
+.sectionitem {
+  border-radius: var(--br-md);
+  background-color: var(--color-gray-600);
+  overflow: hidden;
+  flex-direction: row;
+  padding: var(--padding-xs) var(--padding-xl);
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-sm);
+  color: var(--color-black);
+}
+.div1,
+.personal {
+  position: relative;
+  align-items: center;
+}
+.personal {
+  font-weight: 500;
+  width: 71px;
+  flex-shrink: 0;
+}
+.div1 {
+  flex: 1;
+  font-weight: 300;
+  color: var(--color-black);
+  text-align: right;
+}
+.drawer,
+.sectioncontainer,
+.sectionitem1 {
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.sectionitem1 {
+  flex-direction: row;
+  padding: var(--padding-xs) var(--padding-xl);
+  gap: var(--gap-sm);
+}
+.drawer,
+.sectioncontainer {
+  flex-direction: column;
+}
+.sectioncontainer {
+  flex: 1;
+  padding: var(--padding-2xl) var(--padding-md);
+  gap: var(--gap-md);
+}
+.drawer {
+  background-color: var(--color-gray-100);
+  width: 222px;
+  flex-shrink: 0;
+  padding: var(--padding-sm);
+  box-sizing: border-box;
+  text-align: left;
+  font-size: var(--font-size-base);
+  color: var(--color-gray-300);
+  font-family: var(--font-roboto);
+}

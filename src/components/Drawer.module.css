@@ -80,6 +80,7 @@
 .drawer {
   background-color: var(--color-gray-100);
   width: 222px;
+  height: 100vh;
   flex-shrink: 0;
   padding: var(--padding-sm);
   box-sizing: border-box;

@@ -1,6 +1,12 @@
 # Simple To-Do App
 A simple to-do app built using React:
 
+## Dev Status
+- [X] Create basic components with styles
+- [ ] Add functionality
+## See it in action 
+https://todoapp-react-dirkjbreeuwer.vercel.app/
+
 ##  Features
 * Ability to create, edit, and delete tasks
 * Ability to sort tasks into different buckets for better organization

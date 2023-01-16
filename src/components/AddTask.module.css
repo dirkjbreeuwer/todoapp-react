@@ -21,4 +21,19 @@
     color: #272727;
   }
   
-  
+.addbutton {
+  background-image: url('../../public/addbuttonnormal.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  width: 20px;
+  height: 20px;
+}
+.addbutton:hover {
+  background-image: url('../../public/addbuttonhover.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  width: 20px;
+  height: 20px;
+}

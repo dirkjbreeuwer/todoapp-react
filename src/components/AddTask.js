@@ -3,10 +3,8 @@ import styles from "./AddTask.module.css";
 const AddTask = () => {
   return (
     <div className={styles.addtask}>
-      <div><img
-                className={styles.checkboxChild}
-                alt=""
-                src="../addoutlined.svg"
+      <div><div
+                className={styles.addbutton}
               /></div>
       <span className={styles.description}>Add task</span>
     </div>

@@ -7,8 +7,20 @@
   border-bottom: 4px solid #f2f2f2;
   width: 100%;
 }
+.checkbox{
+  background-image: url('../../public/ellipse-1.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  width: 20px;
+  height: 20px;
+  
+ 
+}
 .checkbox:hover {
+  background-image: url('../../public/ellipse-2.svg');
   background-color: #f2f2f2;
+  border-radius: 50%;
   cursor: pointer;
 }
 

@@ -38,7 +38,7 @@ const Tasks = () => {
 
   const addTaskHandler = (task) => {
     setTasks((prevTasks) => {
-      return [task, ...prevTasks];
+      return [...prevTasks, task];
     })};
 
   const deleteTaskHandler = (taskId) => {

@@ -1,15 +1,15 @@
 import styles from "./TaskItem.module.css";
 
-const TaskItem = ({ uICreateNavigationCompone }) => {
+const TaskItem = (props) => {
   return (
-    <div className={styles.taskitem}>
-      <div className={styles.taskcontainer}>
-        <div className={styles.checkbox}>
-          <img className={styles.checkboxChild} alt="" src="../ellipse-1.svg" />
-        </div>
-        <div className={styles.uiCreate}>{uICreateNavigationCompone}</div>
-      </div>
-      <div className={styles.separator} />
+    <div className={styles.task}>
+      <div><img
+                className={styles.checkbox}
+                alt=""
+                src="../ellipse-1.svg"
+                onClick={props.onDeleteTask}
+              /></div>
+      <span className={styles.description}>{props.description}</span>
     </div>
   );
 };

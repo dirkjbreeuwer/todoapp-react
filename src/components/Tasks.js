@@ -1,68 +1,74 @@
+import React, { useState } from "react";
 import TaskItem from "../components/TaskItem";
+import AddTask from "./AddTask";
 import styles from "./Tasks.module.css";
 
+
+const DUMMY_TASKS = [
+  {
+    id: "t1",
+    description: "UI - Create Navigation component",
+    status: "Active",
+    creationDate: "2022-01-01"
+  },
+  {
+    id: "t2",
+    description: "UI - Create Drawer section",
+    status: "Active",
+    creationDate: "2022-01-01"
+  },
+  {
+    id: "t3",
+    description: "UI - Create Tasks component",
+    status: "Active",
+    creationDate: "2022-01-01"
+  },
+  {
+    id: "t4",
+    description: "Backend - Add authentication",
+    status: "Active",
+    creationDate: "2022-01-01"
+  }
+
+];
+
+
 const Tasks = () => {
+  const [tasks, setTasks] = useState(DUMMY_TASKS);
+
+  const addTaskHandler = (task) => {
+    setTasks((prevTasks) => {
+      return [task, ...prevTasks];
+    })};
+
+  const deleteTaskHandler = (taskId) => {
+    setTasks((prevTasks) => {
+      const updatedTasks = prevTasks.filter((task) => task.id !== taskId);
+      return updatedTasks;
+    })};
+
+  const taskList = tasks.map((task) => {
+    return (
+      <TaskItem
+        key={task.id}
+        description={task.description}
+        status={task.status}
+        creationDate={task.creationDate}
+        onDeleteTask={() => deleteTaskHandler(task.id)} 
+      />
+    );
+
+  });
+
   return (
     <div className={styles.tasks}>
       <div className={styles.header}>
-        <div className={styles.listname}>Inbox</div>
+        <span className={styles.H1}>Inbox</span>
       </div>
-      <div className={styles.tasks1}>
-        <TaskItem uICreateNavigationCompone="UI - Create Navigation component" />
-        <div className={styles.taskitem}>
-          <div className={styles.taskcontainer}>
-            <div className={styles.checkbox}>
-              <img
-                className={styles.checkboxChild}
-                alt=""
-                src="../ellipse-1.svg"
-              />
-            </div>
-            <div
-              className={styles.uiCreate}
-            >{`UI - Create Drawer section `}</div>
-          </div>
-          <div className={styles.separator} />
-        </div>
-        <div className={styles.taskitem}>
-          <div className={styles.taskcontainer}>
-            <div className={styles.checkbox}>
-              <img
-                className={styles.checkboxChild}
-                alt=""
-                src="../ellipse-1.svg"
-              />
-            </div>
-            <div className={styles.uiCreate}>UI - Create Tasks component</div>
-          </div>
-          <div className={styles.separator} />
-        </div>
-        <div className={styles.taskitem}>
-          <div className={styles.taskcontainer}>
-            <div className={styles.checkbox}>
-              <img
-                className={styles.checkboxChild}
-                alt=""
-                src="../ellipse-1.svg"
-              />
-            </div>
-            <div className={styles.uiCreate}>Backend - Add authentication</div>
-          </div>
-          <div className={styles.separator} />
-        </div>
-        <div className={styles.taskitem3}>
-          <div className={styles.taskcontainer}>
-            <div className={styles.checkbox}>
-              <img
-                className={styles.addoutlinedIcon}
-                alt=""
-                src="../addoutlined.svg"
-              />
-            </div>
-            <div className={styles.addTask}>Add Task</div>
-          </div>
-        </div>
-      </div>
+      <div>{taskList}</div>
+      <div><AddTask onAddTask={addTaskHandler}/></div>
+      
+     
     </div>
   );
 };

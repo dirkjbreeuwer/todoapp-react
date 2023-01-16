@@ -1,116 +1,67 @@
-.listname {
-  position: relative;
-  line-height: 133.4%;
-  font-weight: 500;
-}
-.header {
-  align-self: stretch;
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  padding: 0 var(--padding-xl);
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-.checkboxChild {
-  position: relative;
-  width: 22px;
-  height: 22px;
-  flex-shrink: 0;
-}
-.checkbox {
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-.uiCreate {
-  position: relative;
-  letter-spacing: 0.8px;
-}
-.taskcontainer {
-  height: 42px;
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: row;
-  padding: var(--padding-sm);
-  box-sizing: border-box;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: var(--gap-md);
-}
-.separator,
-.taskcontainer,
-.taskitem {
-  align-self: stretch;
-  overflow: hidden;
-}
-.separator {
-  position: relative;
-  background-color: var(--color-gray-200);
-  height: 4px;
-  flex-shrink: 0;
-}
-.taskitem {
-  background-color: var(--light-background-default);
-  display: flex;
-  flex-direction: column;
-  padding: var(--padding-xs) 0;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-.addTask,
-.addoutlinedIcon {
-  position: relative;
-  flex-shrink: 0;
-}
-.addoutlinedIcon {
-  width: 24px;
-  height: 24px;
-  overflow: hidden;
-}
-.addTask {
-  align-self: stretch;
-  letter-spacing: 0.8px;
-  display: flex;
-  align-items: center;
-  width: 85px;
-}
-.taskitem3,
-.tasks,
-.tasks1 {
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-.taskitem3 {
-  align-self: stretch;
-  background-color: var(--light-background-default);
-  padding: var(--padding-xs) 0;
-  align-items: flex-start;
-  color: var(--color-gray-400);
-}
-.tasks,
-.tasks1 {
-  flex: 1;
-}
-.tasks1 {
-  align-self: stretch;
-  padding: var(--padding-md) var(--padding-xs);
-  align-items: flex-start;
-  gap: var(--gap-md);
-  font-size: var(--font-size-base);
-  color: var(--color-gray-500);
-}
 .tasks {
-  height: 596px;
-  padding: var(--padding-2xl) var(--padding-lg);
-  box-sizing: border-box;
-  align-items: center;
-  text-align: left;
-  font-size: var(--font-size-lg);
-  color: var(--light-text-primary1);
-  font-family: var(--font-roboto);
+  /* Auto layout */
+
+display: flex;
+flex-direction: column;
+align-items: left;
+padding: 19px 13px;
+
+width: 943px;
+height: 599px;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 1;
+}
+
+.header {
+  /* Auto layout */
+
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px 16px;
+gap: 16px;
+
+width: 917px;
+height: 24px;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+}
+
+.H1 {
+  width: 264px;
+height: 19px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+
+display: flex;
+align-items: center;
+letter-spacing: 0.8px;
+
+color: #272727;
+
+}
+
+.addTask {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 10px;
+  gap: 10px;
 }

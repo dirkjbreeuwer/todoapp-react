@@ -1,17 +1,18 @@
+import { v4 as uuidv4 } from 'uuid';
+
 import styles from "./AddTask.module.css";
 
 
 
+
 const AddTask = (props) => {
-  let taskIdCounter = 5;
   const createNewTask = () => {
     const newTask = {
-      id: "t" + taskIdCounter,
+      id: uuidv4().toString(),
       description: "New task",
       status: "Active",
       creationDate: new Date().toISOString()
     }
-    taskIdCounter++;
     props.onAddTask(newTask);
   }
   return (

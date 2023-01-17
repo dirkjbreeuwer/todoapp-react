@@ -2,13 +2,13 @@
 A simple to-do app built using React:
 
 ## Dev Status
-- [X] Create basic UI layout with styles
+- [X] Basic UI layout with styles
 - [X] Delete task functionality
 - [ ] Create task functionality
 - [ ] Edit task functionality
 - [ ] Switch between Inbox, Personal and Work panes
 - [ ] Authentication
-- [ ] Backend: Storage 
+- [ ] Backend API
 ## See it in action 
 https://todoapp-react-dirkjbreeuwer.vercel.app/
 

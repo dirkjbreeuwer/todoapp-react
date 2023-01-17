@@ -67,8 +67,6 @@ const Tasks = () => {
       </div>
       <div>{taskList}</div>
       <div><AddTask onAddTask={addTaskHandler}/></div>
-      
-     
     </div>
   );
 };

@@ -6,7 +6,7 @@ flex-direction: column;
 align-items: left;
 padding: 19px 13px;
 
-width: 943px;
+width: auto;
 height: 599px;
 
 
@@ -27,7 +27,7 @@ align-items: flex-start;
 padding: 0px 16px;
 gap: 16px;
 
-width: 917px;
+width: auto;
 height: 24px;
 
 

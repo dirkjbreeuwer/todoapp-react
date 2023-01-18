@@ -1,0 +1,141 @@
+.taskform {
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 16px;
+  gap: 14px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 4;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.taskinputsection {
+  box-sizing: border-box;
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 16px;
+  gap: 10px;
+
+  width: auto;
+  height: auto;
+
+  border: 1px solid #cacaca;
+  border-radius: 8px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.taskdescriptioninput {
+    /* TaskDescriptionInput */
+
+
+/* Auto layout */
+
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 8px 0px;
+gap: 10px;
+
+width: auto;
+height: 35px;
+
+
+/* Inside auto layout */
+align-self: stretch;
+
+flex: none;
+order: 0;
+flex-grow: 0;
+}
+
+.taskactions {
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0px;
+  gap: 8px;
+
+  width: auto;
+  height: 33px;
+
+  /* Inside auto layout */
+
+}
+
+.taskactionsaddbutton {
+    /* Add */
+
+
+/* Auto layout */
+
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 8px;
+gap: 10px;
+
+width: auto;
+height: auto;
+
+background: #27AE60;
+border-radius: 4px;
+
+/* Inside auto layout */
+
+flex: auto;
+order: 1;
+flex-grow: 0;
+}
+
+.taskactionsaddbutton:hover {
+    /* Change color on hover */
+    background: #1E8449;
+    
+    /* Change mouse pointer on hover */
+    cursor: pointer;
+
+}
+
+.taskactionsaddbuttontext {
+    /* Add task */
+
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+
+display: flex;
+align-items: center;
+letter-spacing: 0.8px;
+
+color: #FFFFFF;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+}

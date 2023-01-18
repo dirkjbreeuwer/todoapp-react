@@ -16,7 +16,7 @@ https://todoapp-react-dirkjbreeuwer.vercel.app/
 * Ability to create, edit, and delete tasks
 * Ability to sort tasks into different buckets for better organization
 
-A glimpse of the user-friendly interface of the Simple To-Do App where users can easily manage their tasks and stay organized:
+Preview the user-friendly interface of the TodoApp:
 
 ![Main Screen UI](./assets/MainScreenUI.jpg)
 

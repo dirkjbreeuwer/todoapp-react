@@ -9,15 +9,13 @@
 
   /* Inside auto layout */
 
-  flex: none;
+  flex: 1;
   order: 4;
   align-self: stretch;
   flex-grow: 0;
 }
 
 .taskinputsection {
-  box-sizing: border-box;
-
   /* Auto layout */
 
   display: flex;
@@ -34,34 +32,47 @@
 
   /* Inside auto layout */
 
-  flex: none;
+  flex: 1;
   order: 0;
   align-self: stretch;
-  flex-grow: 0;
+  flex-grow: 1;
 }
 
 .taskdescriptioninput {
-    /* TaskDescriptionInput */
+  /* Auto layout */
 
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 8px 0px;
+  gap: 10px;
 
-/* Auto layout */
+  width: 100%;
+  height: 35px;
 
-display: flex;
-flex-direction: row;
-align-items: flex-start;
-padding: 8px 0px;
-gap: 10px;
+  border: none;
 
-width: auto;
-height: 35px;
+  /* Inside auto layout */
+  align-self: stretch;
 
+  flex: 1;
+  order: 0;
+  flex-grow: 1;
+}
 
-/* Inside auto layout */
-align-self: stretch;
+.taskpanebutton {
+  padding: 4px 10px;
+  gap: 4px;
 
-flex: none;
-order: 0;
-flex-grow: 0;
+border: #cacaca 1px solid;
+border-radius: 4px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 200;
+font-size: 16px;
+line-height: 19px;
+color: #999999;
 }
 
 .taskactions {
@@ -78,64 +89,113 @@ flex-grow: 0;
   height: 33px;
 
   /* Inside auto layout */
-
 }
 
 .taskactionsaddbutton {
-    /* Add */
+  /* Add */
 
+  /* Auto layout */
 
-/* Auto layout */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  gap: 10px;
 
-display: flex;
-justify-content: center;
-align-items: center;
-padding: 8px;
-gap: 10px;
+  width: auto;
+  height: auto;
 
-width: auto;
-height: auto;
+  background: #27ae60;
+  border-radius: 4px;
 
-background: #27AE60;
-border-radius: 4px;
+  /* Inside auto layout */
 
-/* Inside auto layout */
-
-flex: auto;
-order: 1;
-flex-grow: 0;
+  flex: auto;
+  order: 1;
+  flex-grow: 0;
 }
 
 .taskactionsaddbutton:hover {
-    /* Change color on hover */
-    background: #1E8449;
-    
-    /* Change mouse pointer on hover */
-    cursor: pointer;
+  /* Change color on hover */
+  background: #1e8449;
 
+  /* Change mouse pointer on hover */
+  cursor: pointer;
 }
 
 .taskactionsaddbuttontext {
-    /* Add task */
+  /* Add task */
 
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  /* identical to box height */
 
-font-family: 'Roboto';
-font-style: normal;
-font-weight: 400;
-font-size: 16px;
-line-height: 19px;
-/* identical to box height */
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.8px;
 
-display: flex;
-align-items: center;
-letter-spacing: 0.8px;
+  color: #ffffff;
 
-color: #FFFFFF;
+  /* Inside auto layout */
 
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
 
-/* Inside auto layout */
+.taskactionscancelbutton {
+  /* Add */
 
-flex: none;
-order: 0;
-flex-grow: 0;
+  /* Auto layout */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  gap: 10px;
+
+  width: auto;
+  height: auto;
+
+  background: #F5F5F5;
+  border-radius: 4px;
+
+  /* Inside auto layout */
+
+  flex: auto;
+  order: 1;
+  flex-grow: 0;
+}
+
+.taskactionscancelbutton:hover {
+  /* Change color on hover */
+  background: #e0e0e0;
+
+  /* Change mouse pointer on hover */
+  cursor: pointer;
+}
+
+.taskactionscancelbuttontext {
+  /* Add task */
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  /* identical to box height */
+
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.8px;
+
+  color: #3A3A3A;
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
 }

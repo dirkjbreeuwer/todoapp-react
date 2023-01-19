@@ -5,24 +5,29 @@ import classes from "./AddTaskForm.module.css";
 const AddTaskForm = () => {
   return (
     <Fragment>
+      <form>
       <div className={classes.taskform}>
         <div className={classes.taskinputsection}>
-          <div >
-            <input type="text" placeholder="Task Name" className={classes.taskdescriptioninput} />
-          </div>
+          <input
+            type="text"
+            placeholder="Task Name"
+            name="taskDescription" 
+            className={classes.taskdescriptioninput}
+          />
           <div className={classes.taskpanebutton}>
-            <button>Inbox</button>
+            Inbox
           </div>
         </div>
       </div>
       <div className={classes.taskactions}>
-        <div className={classes.taskactionscancelbutton}>
-          <button>Cancel</button>
+        <div onClick={() => console.log("Cancelled")} className={classes.taskactionscancelbutton}>
+          <span className={classes.taskactionscancelbuttontext}>Cancel</span>
         </div>
-        <div className={classes.taskactionsaddbutton}>
+        <button type = "submit" onClick={() => console.log("Clicked")} className={classes.taskactionsaddbutton}>
           <span className={classes.taskactionsaddbuttontext}>Add task</span>
-        </div>
+        </button>
       </div>
+      </form>
     </Fragment>
   );
 };

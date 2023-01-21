@@ -4,7 +4,7 @@ A simple to-do app built using React:
 ## Dev Status
 - [X] Basic UI layout with styles
 - [X] Delete task functionality
-- [ ] Create task functionality
+- [X] Create task functionality
 - [ ] Edit task functionality
 - [ ] Switch between Inbox, Personal and Work panes
 - [ ] Authentication

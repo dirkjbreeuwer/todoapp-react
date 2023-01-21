@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import TaskItem from "../components/TaskItem";
-import AddTask from "./AddTask";
+import AddTaskForm from "./AddTaskForm";
 import styles from "./Tasks.module.css";
 
 const DUMMY_TASKS = [
@@ -65,7 +65,7 @@ const Tasks = () => {
       </div>
       <div>{taskList}</div>
       <div>
-        <AddTask onAddTask={addTaskHandler} />
+        <AddTaskForm onAddTask={addTaskHandler} />
       </div>
     </div>
   );

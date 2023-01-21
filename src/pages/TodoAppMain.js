@@ -1,6 +1,6 @@
 import NavBar from "../components/NavBar";
 import Drawer from "../components/Drawer";
-import Tasks from "../components/Tasks";
+import Tasks from "../components/TaskList";
 import styles from "./TodoAppMain.module.css";
 
 const TodoAppMain = () => {

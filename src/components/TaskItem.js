@@ -17,6 +17,7 @@ const TaskItem = (props) => {
     }
   );
 
+
   return (
     <>
       {isEditing && (

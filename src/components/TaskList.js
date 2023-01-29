@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import TaskItem from "./TaskItem";
-import AddTaskForm from "./AddTaskForm";
+import TaskInputForm from "./TaskInputForm";
 import styles from "./Tasks.module.css";
 
 const DUMMY_TASKS = [
@@ -32,12 +32,31 @@ const DUMMY_TASKS = [
 
 const Tasks = () => {
   const [tasks, setTasks] = useState(DUMMY_TASKS);
+  const [isAdding, setIsAdding] = useState(false);
+
+  const toggleForm = () => {
+    setIsAdding((prevIsAdding) => {
+      return !prevIsAdding;
+    });};
 
   const addTaskHandler = (task) => {
     setTasks((prevTasks) => {
       return [...prevTasks, task];
     });
   };
+
+  const updateTaskHandler = (taskId, taskDescription) => {
+    setTasks((prevTasks) => {
+      const updatedTasks = prevTasks.map((task) => {
+        if (task.id === taskId) {
+          task.description = taskDescription;
+        }
+        return task;
+      });
+      return updatedTasks;
+    });
+  };
+
 
   const deleteTaskHandler = (taskId) => {
     setTasks((prevTasks) => {
@@ -54,6 +73,7 @@ const Tasks = () => {
         status={task.status}
         creationDate={task.creationDate}
         onDeleteTask={() => deleteTaskHandler(task.id)}
+        onUpdateTask={updateTaskHandler.bind(null, task.id)}
       />
     );
   });
@@ -65,7 +85,18 @@ const Tasks = () => {
       </div>
       <div>{taskList}</div>
       <div>
-        <AddTaskForm onAddTask={addTaskHandler} />
+        {!isAdding && (
+         <div className={styles.addtask}>
+         <div>
+           <div className={styles.addbutton} onClick={toggleForm} />
+         </div>
+         <span className={styles.description}>Add task</span>
+       </div>
+        )}
+        {isAdding && (
+         <TaskInputForm onAddTask={addTaskHandler} />
+        )
+        }
       </div>
     </div>
   );

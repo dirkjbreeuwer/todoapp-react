@@ -94,7 +94,7 @@ const Tasks = () => {
        </div>
         )}
         {isAdding && (
-         <TaskInputForm onAddTask={addTaskHandler} />
+         <TaskInputForm onAddTask={addTaskHandler} onSave={toggleForm} onCancel={toggleForm} />
         )
         }
       </div>

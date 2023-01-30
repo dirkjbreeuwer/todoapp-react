@@ -43,7 +43,7 @@ const TaskInputForm = (props) => {
               onClick={toggleForm}
               className={classes.taskactionscancelbutton}
             >
-              <span className={classes.taskactionscancelbuttontext}>
+              <span className={classes.taskactionscancelbuttontext} onClick={props.onCancel}>
                 Cancel
               </span>
             </div>
@@ -52,7 +52,7 @@ const TaskInputForm = (props) => {
               onClick={createNewTask}
               className={classes.taskactionsaddbutton}
             >
-              <span className={classes.taskactionsaddbuttontext}>Add task</span>
+              <span className={classes.taskactionsaddbuttontext} onClick={props.onSave}>Add task</span>
             </button>
           </div>
         </form> )}

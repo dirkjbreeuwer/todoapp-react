@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import TaskItem from "./TaskItem";
 import TaskInputForm from "./TaskInputForm";
+import EditableList from "./EditableList";
 import styles from "./Tasks.module.css";
 
 const DUMMY_TASKS = [
@@ -34,6 +35,27 @@ const Tasks = () => {
   const [tasks, setTasks] = useState(DUMMY_TASKS);
   const [isAdding, setIsAdding] = useState(false);
 
+  // Editing logic
+  const [editIndex, setEditIndex] = useState(null);
+  const [inputValue, setInputValue] = useState("");
+
+  const handleEdit = (index) => {
+    setEditIndex(index);
+    setInputValue(tasks[index].description);
+  };
+
+  const handleSave = (index) => {
+    setTasks(
+      tasks.map((item, i) =>
+        i === index ? { ...item, description: inputValue } : item
+      )
+    );
+    setEditIndex(null);
+    setInputValue("");
+  };
+
+
+  // Form logic
   const toggleForm = () => {
     setIsAdding((prevIsAdding) => {
       return !prevIsAdding;
@@ -45,18 +67,6 @@ const Tasks = () => {
     });
   };
 
-  const updateTaskHandler = (taskId, taskDescription) => {
-    setTasks((prevTasks) => {
-      const updatedTasks = prevTasks.map((task) => {
-        if (task.id === taskId) {
-          task.description = taskDescription;
-        }
-        return task;
-      });
-      return updatedTasks;
-    });
-  };
-
 
   const deleteTaskHandler = (taskId) => {
     setTasks((prevTasks) => {
@@ -65,16 +75,30 @@ const Tasks = () => {
     });
   };
 
-  const taskList = tasks.map((task) => {
+  const taskList = tasks.map((task, index) => {
     return (
-      <TaskItem
-        key={task.id}
-        description={task.description}
-        status={task.status}
-        creationDate={task.creationDate}
-        onDeleteTask={() => deleteTaskHandler(task.id)}
-        onUpdateTask={updateTaskHandler.bind(null, task.id)}
-      />
+      <li key={task.id} 
+      description={task.description} 
+      onDeleteTask={() => deleteTaskHandler(task.id)}
+      onEditTask={() => handleEdit(index)}
+      onSaveTask={() => handleSave(index)}
+      >
+      {editIndex === index ? (
+        <>
+          <input
+            type="text"
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+          />
+          <button onClick={() => handleSave(index)}>Save</button>
+        </>
+      ) : (
+        <>
+          {task.description}
+          <button onClick={() => handleEdit(index)}>Edit</button>
+        </>
+      )}
+      </li>
     );
   });
 
@@ -83,7 +107,7 @@ const Tasks = () => {
       <div className={styles.header}>
         <span className={styles.H1}>Inbox</span>
       </div>
-      <div>{taskList}</div>
+      <ul>{taskList}</ul>
       <div>
         {!isAdding && (
          <div className={styles.addtask}>

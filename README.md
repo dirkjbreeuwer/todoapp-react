@@ -7,7 +7,7 @@ A simple to-do app built using React:
 - [X] Basic UI layout with styles
 - [X] Delete task functionality
 - [X] Create task functionality
-- [ ] Edit task functionality
+- [X] Edit task functionality
 - [ ] Switch between Inbox, Personal and Work panes
 - [ ] Authentication
 - [ ] Backend API
@@ -21,7 +21,7 @@ https://todoapp-react-dirkjbreeuwer.vercel.app/
 - Ability to create, edit, and delete tasks
 - Ability to sort tasks into different buckets for better organization
 
-Preview the user-friendly interface of the TodoApp:
+Preview of the TodoApp:
 
 ![Main Screen UI](./assets/MainScreenUI.jpg)
 

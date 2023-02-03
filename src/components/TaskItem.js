@@ -1,39 +1,30 @@
-import React, { useState } from "react";
-import TaskInputForm from "./TaskInputForm";
-import useDoubleClick from "../hooks/useDoubleClick";
-
+import React, { Fragment } from "react";
 import styles from "./TaskItem.module.css";
 
 const TaskItem = (props) => {
-  const [isEditing, setIsEditing] = useState(false);
-
-  const handleViewClick = useDoubleClick(
-    () => {
-      console.log("Single click");
-    },
-    () => {
-      console.log("Double click");
-      setIsEditing(true);
-    }
-  );
-
-
   return (
-    <>
-      {isEditing && (
-        <TaskInputForm/>
-      )}
-      {!isEditing && (
-        <div className={styles.task}>
-          <div>
-            <div className={styles.checkbox} onClick={props.onDeleteTask} />
+    <div className={styles.task}>
+      <div className={styles.checkbox} onClick={props.onDeleteTask} />
+
+      {props.editIndex === props.index ? (
+        <>
+          <input
+            type="text"
+            value={props.inputValue}
+            onChange={(e) => props.setInputValue(e.target.value)}
+          />
+          <button onClick={props.onSaveTask}>Save</button>
+        </>
+      ) : (
+        <>
+          <div className={styles.description} key={props.id}>
+            {" "}
+            {props.description}{" "}
           </div>
-          <span className={styles.description} onClick={handleViewClick}>
-            {props.description}
-          </span>
-        </div>
+          <button onClick={props.onEditTask}>Edit</button>
+        </>
       )}
-    </>
+    </div>
   );
 };
 

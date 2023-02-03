@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import TaskItem from "./TaskItem";
 import TaskInputForm from "./TaskInputForm";
-import styles from "./Tasks.module.css";
+import styles from "./TaskList.module.css";
 
 const DUMMY_TASKS = [
   {
@@ -34,29 +34,38 @@ const Tasks = () => {
   const [tasks, setTasks] = useState(DUMMY_TASKS);
   const [isAdding, setIsAdding] = useState(false);
 
+  // Editing logic
+  const [editIndex, setEditIndex] = useState(null);
+  const [inputValue, setInputValue] = useState("");
+
+  const handleEdit = (index) => {
+    setEditIndex(index);
+    setInputValue(tasks[index].description);
+  };
+
+  const handleSave = (index) => {
+    setTasks(
+      tasks.map((item, i) =>
+        i === index ? { ...item, description: inputValue } : item
+      )
+    );
+    setEditIndex(null);
+    setInputValue("");
+    console.log(inputValue);
+  };
+
+  // Form logic
   const toggleForm = () => {
     setIsAdding((prevIsAdding) => {
       return !prevIsAdding;
-    });};
+    });
+  };
 
   const addTaskHandler = (task) => {
     setTasks((prevTasks) => {
       return [...prevTasks, task];
     });
   };
-
-  const updateTaskHandler = (taskId, taskDescription) => {
-    setTasks((prevTasks) => {
-      const updatedTasks = prevTasks.map((task) => {
-        if (task.id === taskId) {
-          task.description = taskDescription;
-        }
-        return task;
-      });
-      return updatedTasks;
-    });
-  };
-
 
   const deleteTaskHandler = (taskId) => {
     setTasks((prevTasks) => {
@@ -65,15 +74,17 @@ const Tasks = () => {
     });
   };
 
-  const taskList = tasks.map((task) => {
+  const taskList = tasks.map((task, index) => {
     return (
       <TaskItem
         key={task.id}
         description={task.description}
-        status={task.status}
-        creationDate={task.creationDate}
         onDeleteTask={() => deleteTaskHandler(task.id)}
-        onUpdateTask={updateTaskHandler.bind(null, task.id)}
+        onEditTask={() => handleEdit(index)}
+        onSaveTask={() => handleSave(index)}
+        setInputValue={setInputValue}
+        editIndex={editIndex}
+        index={index}
       />
     );
   });
@@ -86,17 +97,20 @@ const Tasks = () => {
       <div>{taskList}</div>
       <div>
         {!isAdding && (
-         <div className={styles.addtask}>
-         <div>
-           <div className={styles.addbutton} onClick={toggleForm} />
-         </div>
-         <span className={styles.description}>Add task</span>
-       </div>
+          <div className={styles.addtask}>
+            <div>
+              <div className={styles.addbutton} onClick={toggleForm} />
+            </div>
+            <span className={styles.description}>Add task</span>
+          </div>
         )}
         {isAdding && (
-         <TaskInputForm onAddTask={addTaskHandler} onSave={toggleForm} onCancel={toggleForm} />
-        )
-        }
+          <TaskInputForm
+            onAddTask={addTaskHandler}
+            onSave={toggleForm}
+            onCancel={toggleForm}
+          />
+        )}
       </div>
     </div>
   );

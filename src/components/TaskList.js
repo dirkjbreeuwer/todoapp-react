@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import TaskItem from "./TaskItem";
 import TaskInputForm from "./TaskInputForm";
-
 import styles from "./TaskList.module.css";
 
 const DUMMY_TASKS = [
@@ -52,7 +51,7 @@ const Tasks = () => {
     );
     setEditIndex(null);
     setInputValue("");
-    console.log(inputValue)
+    console.log(inputValue);
   };
 
   // Form logic
@@ -78,7 +77,7 @@ const Tasks = () => {
   const taskList = tasks.map((task, index) => {
     return (
       <TaskItem
-      key={task.id}
+        key={task.id}
         description={task.description}
         onDeleteTask={() => deleteTaskHandler(task.id)}
         onEditTask={() => handleEdit(index)}

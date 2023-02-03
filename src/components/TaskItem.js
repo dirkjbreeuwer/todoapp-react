@@ -2,13 +2,10 @@ import React, { Fragment } from "react";
 import styles from "./TaskItem.module.css";
 
 const TaskItem = (props) => {
-
-
-
   return (
     <div className={styles.task}>
       <div className={styles.checkbox} onClick={props.onDeleteTask} />
-      
+
       {props.editIndex === props.index ? (
         <>
           <input
@@ -20,7 +17,10 @@ const TaskItem = (props) => {
         </>
       ) : (
         <>
-         <div className = {styles.description} key={props.id}> {props.description} </div>
+          <div className={styles.description} key={props.id}>
+            {" "}
+            {props.description}{" "}
+          </div>
           <button onClick={props.onEditTask}>Edit</button>
         </>
       )}

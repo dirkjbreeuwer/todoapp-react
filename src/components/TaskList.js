@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import TaskItem from "./TaskItem";
 import TaskInputForm from "./TaskInputForm";
-import EditableList from "./EditableList";
-import styles from "./Tasks.module.css";
+
+import styles from "./TaskList.module.css";
 
 const DUMMY_TASKS = [
   {
@@ -52,21 +52,21 @@ const Tasks = () => {
     );
     setEditIndex(null);
     setInputValue("");
+    console.log(inputValue)
   };
-
 
   // Form logic
   const toggleForm = () => {
     setIsAdding((prevIsAdding) => {
       return !prevIsAdding;
-    });};
+    });
+  };
 
   const addTaskHandler = (task) => {
     setTasks((prevTasks) => {
       return [...prevTasks, task];
     });
   };
-
 
   const deleteTaskHandler = (taskId) => {
     setTasks((prevTasks) => {
@@ -77,28 +77,16 @@ const Tasks = () => {
 
   const taskList = tasks.map((task, index) => {
     return (
-      <li key={task.id} 
-      description={task.description} 
-      onDeleteTask={() => deleteTaskHandler(task.id)}
-      onEditTask={() => handleEdit(index)}
-      onSaveTask={() => handleSave(index)}
-      >
-      {editIndex === index ? (
-        <>
-          <input
-            type="text"
-            value={inputValue}
-            onChange={(e) => setInputValue(e.target.value)}
-          />
-          <button onClick={() => handleSave(index)}>Save</button>
-        </>
-      ) : (
-        <>
-          {task.description}
-          <button onClick={() => handleEdit(index)}>Edit</button>
-        </>
-      )}
-      </li>
+      <TaskItem
+      key={task.id}
+        description={task.description}
+        onDeleteTask={() => deleteTaskHandler(task.id)}
+        onEditTask={() => handleEdit(index)}
+        onSaveTask={() => handleSave(index)}
+        setInputValue={setInputValue}
+        editIndex={editIndex}
+        index={index}
+      />
     );
   });
 
@@ -107,20 +95,23 @@ const Tasks = () => {
       <div className={styles.header}>
         <span className={styles.H1}>Inbox</span>
       </div>
-      <ul>{taskList}</ul>
+      <div>{taskList}</div>
       <div>
         {!isAdding && (
-         <div className={styles.addtask}>
-         <div>
-           <div className={styles.addbutton} onClick={toggleForm} />
-         </div>
-         <span className={styles.description}>Add task</span>
-       </div>
+          <div className={styles.addtask}>
+            <div>
+              <div className={styles.addbutton} onClick={toggleForm} />
+            </div>
+            <span className={styles.description}>Add task</span>
+          </div>
         )}
         {isAdding && (
-         <TaskInputForm onAddTask={addTaskHandler} onSave={toggleForm} onCancel={toggleForm} />
-        )
-        }
+          <TaskInputForm
+            onAddTask={addTaskHandler}
+            onSave={toggleForm}
+            onCancel={toggleForm}
+          />
+        )}
       </div>
     </div>
   );
